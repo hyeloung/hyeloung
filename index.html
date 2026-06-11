@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 모바일 환경에 최적화된 화면 비율 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위·대장내시경 검사 후 안내</title>
+    <!-- 읽기 편안하고 깔끔한 구글 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 첫 화면 (인트로) -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content">
+            <div class="intro-icon">🩺</div>
+            <h1>검사받으시느라<br>정말 고생 많으셨습니다.</h1>
+            <p class="touch-hint">화면을 가볍게 터치해 주세요</p>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div id="main-content" class="main-content hidden">
+        <header class="app-header">
+            <h1>내시경 검사 후 안내</h1>
+            <p>검사 받으시느라 고생 많으셨습니다.<br>안전하고 빠른 회복을 위해 아래 내용을 꼭 읽어주세요.</p>
+        </header>
+
+        <main class="app-main">
+            <!-- Step 1) 검사 직후 주의사항 -->
+            <div id="step-1" class="step-container active">
+                <section class="card" id="precautions">
+                    <div class="card-header">
+                        <span class="icon">⚠️</span>
+                        <h2>검사 직후 주의사항</h2>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>충분한 휴식을 취해주세요:</strong> 수면 내시경을 하신 경우, 약기운으로 인해 어지럽거나 졸음이 올 수 있습니다. 넘어지지 않도록 주의하시고 집에서 푹 쉬어주세요.</li>
+                            <li><strong>당일 운전은 절대 금물입니다:</strong> 수면 내시경 당일에는 자가운전이나 정밀한 기계 조작을 절대 피하셔야 합니다.</li>
+                            <li><strong>목이 아플 수 있습니다:</strong> 위내시경 후 하루나 이틀 정도는 침을 삼킬 때 목에 이물감이 있거나 약간 아플 수 있습니다. 자연스러운 현상이니 가래를 억지로 세게 뱉지 마시고, 따뜻한 물을 조금씩 드시면 도움이 됩니다.</li>
+                            <li><strong>배에 가스가 찬 느낌이 들 수 있습니다:</strong> 대장내시경 검사 시 장을 관찰하기 위해 공기를 주입하기 때문에 배가 빵빵하고 불편하실 수 있습니다. 가스를 참지 마시고 편안하게 배출하시면 복통이 금방 사라집니다.</li>
+                        </ul>
+                    </div>
+                </section>
+                <button class="next-step-btn" onclick="goToStep(2)">다음: 식사 안내 보기 ➔</button>
+            </div>
+
+            <!-- Step 2) 식이 안내 -->
+            <div id="step-2" class="step-container hidden">
+                <section class="card" id="diet-guide">
+                    <div class="card-header">
+                        <span class="icon">🍲</span>
+                        <h2>검사 후 식사 안내</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="section-desc">검사 받으신 종류를 선택하시면 자세한 식사 방법을 확인하실 수 있습니다.</p>
+                        
+                        <div class="accordion">
+                            <!-- 일반 위내시경 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">일반 위내시경을 하신 경우</button>
+                                <div class="accordion-content">
+                                    <p class="highlight">💧 <strong>물 마시기:</strong> 검사 끝나고 <strong>30분 후</strong>부터 드실 수 있습니다.</p>
+                                    <p>🍲 <strong>식사하기:</strong> 물을 드신 후 사레들리거나 불편함이 없다면, 평소 드시던 대로 <strong>일반식</strong>을 드셔도 좋습니다.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 수면 위내시경 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">수면 위내시경을 하신 경우</button>
+                                <div class="accordion-content">
+                                    <p class="highlight">💧 <strong>물 마시기:</strong> 검사 끝나고 <strong>2시간 후</strong>부터 드실 수 있습니다.</p>
+                                    <p>🍲 <strong>식사하기:</strong> 2시간 뒤에 물을 먼저 조금 드셔보시고, 속이 불편하지 않고 사레가 들리지 않는다면 평소처럼 <strong>일반식</strong>을 드셔도 됩니다. 단, 무리한 과식은 피해주세요.</p>
+                                </div>
+                            </div>
+
+                            <!-- 조직검사 진행 시 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">위내시경 중 조직검사를 하신 경우</button>
+                                <div class="accordion-content">
+                                    <p class="highlight">💧 <strong>물 마시기:</strong> 검사 끝나고 <strong>2시간 후</strong>부터 드실 수 있습니다.</p>
+                                    <p>🍲 <strong>식사하기:</strong> 위 점막에 작은 상처가 있는 상태이므로, <strong>첫 끼니는 반드시 자극 없는 부드러운 '죽'</strong>으로 드셔야 합니다.</p>
+                                    <p>그 이후 저녁 식사부터는 소화가 잘 되는 <strong>부드러운 일반식</strong>을 드셔도 좋습니다.</p>
+                                    <p class="warning-text">※ 맵고 짠 자극적인 음식, 뜨거운 음식, 커피, 술, 담배는 상처 회복을 방해하므로 최소 2~3일간은 피해주셔야 합니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- 대장내시경 안내 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">대장내시경을 하신 경우</button>
+                                <div class="accordion-content">
+                                    <p class="highlight">💧 <strong>물 마시기:</strong> 검사 끝나고 <strong>2시간 후</strong>부터 드실 수 있습니다.</p>
+                                    <p>🍲 <strong>식사하기:</strong> 2시간 뒤에 물을 먼저 조금 드셔보시고, 속이 불편하지 않고 사레가 들리지 않는다면 평소처럼 <strong>일반식</strong>을 드셔도 됩니다. 단, 무리한 과식은 피해주세요.</p>
+                                </div>
+                            </div>
+
+                            <!-- 대장내시경 조직검사/용종제거 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">대장내시경 중 조직검사 및 용종제거를 하신 경우</button>
+                                <div class="accordion-content">
+                                    <p class="highlight">💧 <strong>물 마시기:</strong> 검사 끝나고 <strong>4시간 후</strong>부터 드실 수 있습니다.</p>
+                                    <p>🍲 <strong>식사하기:</strong> 장 점막에 상처가 있는 상태이므로 <strong>첫 끼니는 반드시 부드러운 '죽'</strong>으로 드시고, 그 다음 식사부터 소화가 잘 되는 <strong>부드러운 일반식</strong>을 하시기 바랍니다.</p>
+                                    <p class="warning-text">※ 조직 제거(용종 절제)를 하신 경우에는 출혈 예방을 위해 검사 후 <strong>2주간 금주 및 등산, 골프 등 격렬한 운동을 절대 금지</strong>해 주셔야 합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <button class="next-step-btn" onclick="goToStep(3)">다음: 긴급 연락처 보기 ➔</button>
+            </div>
+
+            <!-- Step 3) 긴급 연락처(신호) -->
+            <div id="step-3" class="step-container hidden">
+                <section class="card emergency-card" id="emergency">
+                    <div class="card-header">
+                        <span class="icon">🚨</span>
+                        <h2>꼭 병원으로 연락주셔야 할 때</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>댁에 돌아가신 후 아래와 같은 증상이 나타난다면 당황하지 마시고 즉시 병원으로 연락 주시거나 응급실로 방문해 주세요.</p>
+                        <ul class="emergency-list">
+                            <li>배가 찌르듯이 심하게 아프거나 가슴에 통증이 계속될 때</li>
+                            <li>피를 토하거나, 자장면 색깔처럼 새까만 대변(흑색변) 또는 피가 섞인 붉은 변을 보실 때</li>
+                            <li>숨쉬기가 힘들거나 심하게 어지러워 쓰러질 것 같을 때</li>
+                        </ul>
+                        <a href="tel:02-1234-5678" class="call-btn">
+                            병원으로 바로 전화하기 (02-1234-5678)
+                        </a>
+                    </div>
+                </section>
+                <button class="next-step-btn secondary" onclick="goToStep(1)">처음으로 돌아가기 ↺</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2026 건강내과의원. 환자분의 빠른 쾌유를 진심으로 바랍니다.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
