@@ -41,10 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 첫 번째 아코디언 기본으로 열어두기 (선택적)
-    if(accordionButtons.length > 0) {
-        accordionButtons[0].click();
-    }
 });
 
 // 단계별 네비게이션 함수 (전역)
